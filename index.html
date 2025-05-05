@@ -3,167 +3,497 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
+    <title>portfolio</title>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    </head>
     <style>
         *{
             margin: 0;
             padding: 0;
-            font-family: sans-serif;
+            font-family: serif ;
+            font-weight: bold;
             box-sizing: border-box;
         }
-        .container{
-            padding: 20px;
-            width: 100%;
-            height: 100%;
-            background: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
+        html{
+            scroll-behavior: smooth;
         }
-        .music-player{
-            background: #ffe0e5;
-            border-radius: 10px;
-            width: 400px;
-            padding: 25px 35px;
-            text-align: center;
+        body{
+            background: #080808;
+            color: #fff;
+        }
+        #header{
+            width: 100%;
+            height: 100vh;
+            background-image: url(IMG-20250312-WA0105.jpg);
+            background-size: cover;
+           background-position:center;
+        }
+        .container{
+            padding: 10px 10%;
         }
         nav{
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
-        nav .circle{
+        .logo{
+            width: 240px;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            background: #fff;
-            color: #f53192;
-            box-shadow: 0 5px 10px rgba(255, 26, 26,0.22);
+            margin-left: -100px;
         }
-        .song-img{
-            width: 270px;
-            border-radius: 50%;
-            border: 8px solid #fff;
-            box-shadow: 0 5px 10px rgba(255, 26, 26,0.22);
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+            margin-bottom: 160px; 
+            margin-left: 0px;
         }
-        .music-player h1{
-            font-size: 20px;
-            font-weight: 400;
-            font-family: italic;
-            color: #961313;
-            margin-top: 20px;
+        nav ul li a{
+            color:#fff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+        nav ul li a::after{
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+            border-radius: 20px;
+        }
+        nav ul li a:hover::after{
+            width: 100%;
+        }
+        .header_text{
+         margin-top: 20%;
+         font-size: 30px;
+        }
+        .header_text h1{
+            font-size: 50px;
+            margin-top:10px;
+        }
+        .header_text p{
+            color: rgb(12, 12, 12);
+            font-size: xxx-large;
             font-weight: bold;
         }
-        .music-player p{
-            font-size: 14px;
-            color: #333;
-        }
-        #progress{
-            -webkit-appearance: none;
-            width: 100%;
-            height: 6px;
-            background: #f53192;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 40px 0px;
-        }
-        #progress::-webkit-slider-thumb{
-            -webkit-appearance: none;
-            background: #f53192;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 8px solid #fff;
-            box-shadow: 0 5px 10px rgba(255, 26, 26,0.22);
-        }
-        .controls{
+         .header_text h1 span{
+            color:blue;
+         }
+         /*-------------about------------*/
+         #about{
+            padding: 80px 0px;
+            color: #ababab; ;
+         }
+         .row{
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+         }
+         .about-col-1{
+            flex-basis: 35%;
+         }
+         .about-col-1 img{
+            width: 100%;
+            border-radius: 15px;
+         }
+         .about-col-2{
+         flex-basis: 50%;
+         }
+        .sub-title{
+            font-size: 60px;
+            font-weight: 600;
+            color: #fff;
         }
-        .controls div{
+        .tab-titles{
+            display: flex;
+            margin: 20px  0 40px;
+        }
+        .tab-links{
+            margin-right: 50px;
+            font-size: 180x;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+        .tab-links::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+        .tab-links.active-link::after{
+            width: 50%;
+        }
+        .tab-contents ul li{
+            list-style: none;
+            margin: 10px 0;
+        }
+         .tab-contents ul li span{
+            color:#b54769;
+            font-size: 14px;
+         }
+         .tab-contents{
+            display: none;
+         }
+         .tab-contents.active-tab{
+            display: block;
+         }
+         /*-------------services------------*/
+         #services{
+            padding: 30px 0px;
+
+         }
+         .services-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+         }
+         .services-list div{
+            background: #262626;
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 10px;
+            transition:background 0.5s,transform 0.5s;
+         }
+         .services-list img{
+           margin-bottom: 10px;
+         }
+         .services-list div h2{
+            font-size: 30px;
+            font-weight: 500;
+             color:#b54769;
+             font-weight: bold;
+            margin-bottom: 15px;
+         }
+         .services-list div a{
+            text-decoration: none;
+            color:#fff;
+            font-size:12px;
+            margin-top: 20px;
+            display: inline-block;
+         }
+         .services-list div:hover{
+            background: #ff004f;
+            transform: translateY(-10px);
+         }
+        /*-------------portfolio------------*/
+         #portfolio{
+            padding: 50px 0px;
+         }
+         .work-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+         }
+         .work {
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+         }
+         .work img{
+        width: 100%;
+        border-radius: 15px;
+        display: block;
+        transition: transform 0.5s;
+        }
+        .layer{
+            height: 0;
+            width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            font-size: 14px;
+            transition: heigh 0.5s;
+        }
+        .layer h3{
+            color: rgb(27, 238, 62);
+            font-size:22px;
+            font-weight: bold;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .layer a{
+            margin-top: 25px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 60px;
+            background: #fff;
             width: 60px;
             height: 60px;
-            margin: 20px;
-            background: #fff;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
             border-radius: 50%;
-            box-shadow: 0 5px 10px rgba(255, 26, 26,0.22);
-            cursor: pointer;
+            text-align: center;
         }
-        .controls div:nth-child(2){
-            transform: scale(1.2);
-            background-color: #f53192;
+        .work:hover img{
+            transform: scale(1.1);
         }
+        .work:hover .layer{
+            height: 100%;
+        }
+        .btn{
+            display: block;
+            margin: 50px auto;
+            width: fit-content;
+            border: 1px solid #ff004f;
+            padding: 14px 50px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.5s;
+        }
+        .btn:hover{
+            background: #ff004f;
+        }
+        /*-------------contact------------*/
+        .contact-left{
+            flex-basis: 35%;
+
+        }
+        .contact-right{
+            flex-basis: 60%;
+
+        }
+        .contact-left p{
+            margin-top: 30px;
+        }
+        .contact-left b{
+            margin-right: 10px;
+            font-size: 25px;
+        }
+        .social-icons{
+            margin-top: 30px;
+        }
+        .social-icons a{
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
+        .social-icons a:hover{
+            transform: translateY(-10px);
+        }
+        .btn.btn2{
+        display: inline-block;
+        background: #ff004f;
+        }
+        .contact-right form{
+            width: 100%;
+        }
+        form input, form textarea{
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #262626;
+            padding: 15px;
+            margin: 15px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+        form .btn2{
+        padding: 14px 60px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+        }
+        .copyright{
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: #262626;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+        @media only screen and (max-width: 600px){
+        .header_text{
+            margin-top: 100%;
+            font-size: 16px;
+        }
+        .header_text h1{
+            font-size: 30px;
+        }
+    }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="music-player">
-            <nav>
-                <div class="circle">
-                    <img style="width: 50px;margin-left:-6px; margin-top:-5px;" src="Images/l.png">
+
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="shams.png" class="logo">
+          <ul>
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contacts</a></li>
+          </ul>
+        </nav>
+        <div class="header_text">
+            <p>Front-End Developer</p>
+            <h1>Hi, I'm <span>Shams Ur Rahman</span><br>Form Pakistan</h1>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img style = "width:500px; height:500px;" src="img1.jpg">
                 </div>
-                <div class="circle">
-                    <img style="width: 30px; margin-top:5px" src="Images/m.png">
-                </div>
-            </nav>
-            <img src="Images/img1.jpg" class="song-img">
-            <h1>Shams Ur Rahman</h1>
-            <p>Zoolfe De Ma Samawa Wrane Ba Shee</p>
-            <audio id="song">
-                <source src="Images/shams.mp3" type="audio/mpeg">
-            </audio>
-            <input type="range" value="0" id="progress">
-            <div class="controls">
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>I am Student of BS <b style="color: blue;"> Software Engineering </b> 4th Semester.My Web Development journey is started from <b style="color: blue;">Islamia College University Peshawar </b>.Now-a-day I am Front-End Developers and working on different projects and also I am committed with two Internships.One is International which is <b style="color: blue;">CODEALPHA</b>and another is National which is <b style="color: blue;">DEVELOPERS HUB</b>.Further details are give Below.</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links active-link"  onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Front-End Developers</span><br>Judge Me If You Are Perfect</li>
+                                 <li><span>Communication</span><br>Compete me</li>
+                                  <li><span>Leadership</span><br>Loyality is first Priority</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2024-Current</span><br>Internships,Projects & worked in Software House</li>
+                                 <li><span>12 Dec, 2005-Current</span><br>From Birth God Gifted</li>
+                                  <li><span>2018-Current</span><br>School,College,University & Software House</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2020-2021</span><br>Hira School Bara</li>
+                                 <li><span>2022-2023</span><br>Peshawar Model Degree College</li>
+                                  <li><span>2024-current</span><br>Islamia College University</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
                 <div>
-                    <img style="height: 30px;" src="Images/back-removebg-preview.png">
-                </div>
-                 <div onclick="playPause()">
-                    <img style="height: 30px;" src="Images/play-removebg-preview.png" id="ctrlIcon">
+                    <img style="width: 50px; height:30px" src="alii.png" alt="">
+                    <h2>Web Designing</h2>
+                    <p>You can Contact with us for any kind of Web Designing.Professional Developeres and Cheap Price</p>
+                    <a href="#">Learn More</a>
                 </div>
                  <div>
-                    <img style="height: 24px;" src="Images/forw-removebg-preview.png">
+                    <img style="width: 50px; height:30px" src="alii.png" alt="">
+                    <h2>Web Designing Course</h2>
+                    <p>You can Contact with us for any kind of Web Designing Course and also for Teaching.Professional Teachers and Cheap Price</p>
+                    <a href="#">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
+
+<div id="portfolio">
+    <div class="container">
+    <h1 class="sub-title">My Work</h1>
+    <div class="work-list">
+        <div class="work">
+            <img style="height: 271px;" src="coursee.png">
+            <div class="layer">
+                <h3>Web Designing Course</h3>
+                <p>Web Desiging Course is available on cheap price both physical and online classes can conduct</p>
+                <a href="#"  style="font-size: 40px;text-decoration: none;">🔗</a>
+            </div>
+        </div>
+        <div class="work">
+            <img style="margin-top:-33px; height:320px;" src="background.png">
+            <div class="layer">
+                <h3 style="margin-top: -20px;">Background-Color Changer</h3>
+                <p>This was my basic project of web when i was learning functionallity</p>
+                <a href="#"  style="font-size: 40px;text-decoration: none;"> 🔗</a>
+            </div>
+        </div>
+        <div class="work">
+            <img style="height: 200px;margin-top:20px" src="passs.png">
+            <div class="layer">
+                <h3 style="margin-top: -20px;">Password Generator</h3>
+                <p>This was my basic project of web when i was learning functionallity</p>
+                <a href="#" style="font-size: 40px;text-decoration: none;"> 🔗</a>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn">See More</a>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><b>➡️</b>shamsurrahman1578@gmail.com</p>
+                <p><b>📞</b>03337499268</p>
+                <div class="social-icons">
+                    <a href=""><img style="border-radius: 50%; width:60px;height:60px;margin-top:20px" src="fac.png"></a>
+                    <a href=""><img style="border-radius: 50%; width:60px;height:60px;margin-top:20px" src="ins.jpg"></a>
+                    <a href=""><img style="border-radius: 50%; width:60px;height:60px;margin-top:20px" src="tiktok.jpg"></a>
+                    <a href=""><img style="border-radius: 50%; width:60px;height:60px;margin-top:20px" src="twitter.jpg"></a>
+                </div>
+                <a href="calculator.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Enter Your Name" required>
+                    <input type="text" name="Email" placeholder="Enter Your Email" required>
+                    <textarea name="Message" rows="6"placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright username : shamsurrahman</p>
+    </div>
+</div>
     <script>
-    let progress = document.getElementById("progress");
-    let song = document.getElementById("song");
-    let ctrlIcon = document.getElementById("ctrlIcon");
-
-    // Set progress max value when metadata is loaded
-    song.onloadedmetadata = function () {
-        progress.max = song.duration;
-        progress.value = song.currentTime;
-    };
-
-    // Play/Pause function
-    function playPause() {
-        if (song.paused) {
-            song.play();
-            ctrlIcon.src = "Images/pause-removebg-preview (1).png"; // Change to pause icon
-        } else {
-            song.pause();
-            ctrlIcon.src = "Images/play-removebg-preview.png"; // Change to play icon
-        }
-    }
-
-    // Update progress bar as the song plays
-    song.ontimeupdate = function () {
-        progress.value = song.currentTime;
-    };
-
-    // Allow user to seek through the progress bar
-    progress.oninput = function () {
-        song.currentTime = progress.value;
-    };
-
-</script>
+        var tablinks = document.getElementsByClassName("tab-links");
+         var tabcontents = document.getElementsByClassName("tab-contents");
+         function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+         }
+    </script>
 </body>
 </html>
